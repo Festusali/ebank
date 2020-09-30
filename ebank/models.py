@@ -78,8 +78,7 @@ class Profile(models.Model):
         max_length=2, choices=STATUSES, blank=True, help_text='Marital status'
     )
     phone = models.CharField(
-        max_length=14, blank=True, default='+2340123456789',
-        help_text='Mobile number'
+        max_length=14, blank=True, help_text='Mobile number'
     )
     address = models.CharField(
         max_length=150, blank=True, help_text='Contact address'
