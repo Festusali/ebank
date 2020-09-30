@@ -123,7 +123,7 @@ class Transfer(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
         help_text='User transferring', null=True
     )
-    account = models.IntegerField(
+    account = models.BigIntegerField(
         help_text='Account number to be tranfer to',
     )
     amount = models.DecimalField(
@@ -148,7 +148,7 @@ class TempTransfer(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
         help_text='User transferring', null=True
     )
-    account = models.IntegerField(
+    account = models.BigIntegerField(
         help_text='Account number to be tranfer to',
     )
     amount = models.DecimalField(
@@ -174,7 +174,7 @@ class Withdraw(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.SET_NULL,
         null=True, help_text='User withdrawing'
     )
-    account = models.IntegerField(help_text='From which account?')
+    account = models.BigIntegerField(help_text='From which account?')
     amount = models.DecimalField(
         max_digits=9, decimal_places=2, help_text='Amount to withdraw'
     )
@@ -194,7 +194,7 @@ class Deposit(models.Model):
     """Keeps record of each deposit."""
 
     user = models.CharField(max_length=100, help_text='User depositing')
-    account = models.IntegerField(help_text='Into which account?',)
+    account = models.BigIntegerField(help_text='Into which account?',)
     amount = models.DecimalField(
         max_digits=9, decimal_places=2, help_text='Amount to deposit'
     )
