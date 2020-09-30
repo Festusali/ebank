@@ -1,5 +1,3 @@
-from random import randint
-
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser, UserManager
 from django.db import models
@@ -79,9 +77,9 @@ class Profile(models.Model):
     status = models.CharField(
         max_length=2, choices=STATUSES, blank=True, help_text='Marital status'
     )
-    phone = models.IntegerField(
-        help_text='Mobile number', blank=True,
-        default=2340123456789  # randint(1000000, 9000000)
+    phone = models.CharField(
+        max_length=14, blank=True, default='+2340123456789',
+        help_text='Mobile number'
     )
     address = models.CharField(
         max_length=150, blank=True, help_text='Contact address'
